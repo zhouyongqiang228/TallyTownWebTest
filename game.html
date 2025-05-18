@@ -74,6 +74,10 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
          
+          canvas.tabIndex = 1;
+          canvas.focus();
+          canvas.addEventListener("click", () => canvas.focus());
+
         }).catch((message) => {
           alert(message);
         });
