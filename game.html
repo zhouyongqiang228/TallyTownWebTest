@@ -6,6 +6,14 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM8QSXXZT7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LM8QSXXZT7');
+    </script>
   </head>
   <body>
     <div id="container" class="desktop" >
@@ -78,6 +86,12 @@
           var endTime = Date.now();
           var loadingTime = (endTime - startTime) / 1000;
           console.log("Unity loading time: " + loadingTime + " seconds");
+          // Send loading time to Google Analytics
+          gtag('event', 'unity_loading_time', {
+            'loading_time': loadingTime,
+            'event_category': 'Performance',
+            'event_label': 'Unity Load Time'
+          });
           //alert("Unity loading completed, total time: " + loadingTime + " seconds");
 
           canvas.tabIndex = 1;
