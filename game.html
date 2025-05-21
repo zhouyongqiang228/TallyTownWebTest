@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="TemplateData/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM8QSXXZT7"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VD5F2585WB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-LM8QSXXZT7');
+      gtag('config', 'G-VD5F2585WB');
     </script>
   </head>
   <body>
@@ -78,63 +78,29 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        console.log("Unity loading started");
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           var endTime = Date.now();
           var loadingTime = (endTime - startTime) / 1000;
-          console.log("Unity loading time: " + loadingTime + " seconds");
 
           if (loadingTime < 3) {
-            gtag('event', 'unity_loading_time_less_3', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time < 3s'
-            });
+            gtag('event', 'unity_loading_time_less_3');
           } else if (loadingTime >= 3 && loadingTime < 7) {
-            gtag('event', 'unity_loading_time_3_7', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time 3-7s'
-            });
+            gtag('event', 'unity_loading_time_3_7');
           } else if (loadingTime >= 7 && loadingTime < 12) {
-            gtag('event', 'unity_loading_time_7_12', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time 7-12s'
-            });
+            gtag('event', 'unity_loading_time_7_12');
           } else if (loadingTime >= 12 && loadingTime < 20) {
-            gtag('event', 'unity_loading_time_12_20', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time 12-20s'
-            });
+            gtag('event', 'unity_loading_time_12_20');
           } else if (loadingTime >= 20 && loadingTime < 30) {
-            gtag('event', 'unity_loading_time_20_30', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time 20-30s'
-            });
+            gtag('event', 'unity_loading_time_20_30');
           } else if (loadingTime >= 30 && loadingTime < 50) {
-            gtag('event', 'unity_loading_time_30_50', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time 30-50s'
-            });
+            gtag('event', 'unity_loading_time_30_50');
           } else if (loadingTime >= 50 && loadingTime < 100) {
-            gtag('event', 'unity_loading_time_50_100', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time 50-100s'
-            });
+            gtag('event', 'unity_loading_time_50_100');
           } else {
-            gtag('event', 'unity_loading_time_bigger_100', {
-              'loading_time': loadingTime,
-              'event_category': 'Performance',
-              'event_label': 'Unity Load Time > 100s'
-            });
+            gtag('event', 'unity_loading_time_bigger_100');
           }
 
           // Send loading time to Google Analytics
