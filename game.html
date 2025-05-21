@@ -26,6 +26,7 @@
       var loadingBar = document.querySelector("#loading-bar");
       var progressBarFull = document.querySelector("#progress-bar-full"); 
       var warningBanner = document.querySelector("#warning");
+      var startTime = Date.now();
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -73,6 +74,10 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
+          var endTime = Date.now();
+          var loadingTime = (endTime - startTime) / 1000;
+          console.log("Unity loading time: " + loadingTime + " seconds");
+          //alert("Unity loading completed, total time: " + loadingTime + " seconds");
 
           canvas.tabIndex = 1;
           canvas.focus();
