@@ -86,6 +86,57 @@
           var endTime = Date.now();
           var loadingTime = (endTime - startTime) / 1000;
           console.log("Unity loading time: " + loadingTime + " seconds");
+
+          if (loadingTime < 3) {
+            gtag('event', 'unity_loading_time_less_3', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time < 3s'
+            });
+          } else if (loadingTime >= 3 && loadingTime < 7) {
+            gtag('event', 'unity_loading_time_3_7', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time 3-7s'
+            });
+          } else if (loadingTime >= 7 && loadingTime < 12) {
+            gtag('event', 'unity_loading_time_7_12', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time 7-12s'
+            });
+          } else if (loadingTime >= 12 && loadingTime < 20) {
+            gtag('event', 'unity_loading_time_12_20', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time 12-20s'
+            });
+          } else if (loadingTime >= 20 && loadingTime < 30) {
+            gtag('event', 'unity_loading_time_20_30', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time 20-30s'
+            });
+          } else if (loadingTime >= 30 && loadingTime < 50) {
+            gtag('event', 'unity_loading_time_30_50', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time 30-50s'
+            });
+          } else if (loadingTime >= 50 && loadingTime < 100) {
+            gtag('event', 'unity_loading_time_50_100', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time 50-100s'
+            });
+          } else {
+            gtag('event', 'unity_loading_time_bigger_100', {
+              'loading_time': loadingTime,
+              'event_category': 'Performance',
+              'event_label': 'Unity Load Time > 100s'
+            });
+          }
+
           // Send loading time to Google Analytics
           gtag('event', 'unity_loading_time', {
             'loading_time': loadingTime,
