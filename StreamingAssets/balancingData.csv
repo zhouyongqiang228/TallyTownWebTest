@@ -1,9 +1,9 @@
-appleStacking_star1Score,220
-appleStacking_star2Score,180
-appleStacking_star3Score,140
-appleStacking_star4Score,120
-appleStacking_star5Score,120
-appleStacking_questionSuccessScore,50
+appleStacking_star1Score,200
+appleStacking_star2Score,200
+appleStacking_star3Score,200
+appleStacking_star4Score,200
+appleStacking_star5Score,200
+appleStacking_questionSuccessScore,100
 appleStacking_questionFailureScore,0
 appleStacking_easyQuestionSuccessScore,100
 appleStacking_easyQuestionFailureScore,0
@@ -35,8 +35,6 @@ fruitMarket_easyQuestionSuccessScore,100
 fruitMarket_easyQuestionFailureScore,0
 fruitMarket_hardQuestionSuccessScore,100
 fruitMarket_hardQuestionFailureScore,0
-fruitMarket_easyQuestionRate,0.1
-fruitMarket_hardQuestionRate,0.05
 houseNumberPainting_star1Score,200
 houseNumberPainting_star2Score,200
 houseNumberPainting_star3Score,200
@@ -48,11 +46,3 @@ houseNumberPainting_easyQuestionSuccessScore,100
 houseNumberPainting_easyQuestionFailureScore,0
 houseNumberPainting_hardQuestionSuccessScore,100
 houseNumberPainting_hardQuestionFailureScore,0
-houseNumberPainting_easyQuestionRate,0.1
-houseNumberPainting_hardQuestionRate,0.05
-currencyPerTask,5
-currencyPerStar1,15
-currencyPerStar2,15
-currencyPerStar3,15
-currencyPerStar4,15
-currencyPerStar5,15
